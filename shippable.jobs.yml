@@ -22,7 +22,7 @@ jobs:
         switch: off
       - IN: deploy_kube_runsh_cli_kubectl
       # - IN: deploy_kube_runsh_img
-      - IN: deploy_kube_runsh_img
+      - IN: deploy_kube_runsh_state
       - IN: deploy_kube_runsh_params_test
       - TASK:
         # set environment variables
