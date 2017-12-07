@@ -33,6 +33,10 @@ resources:
     flags:
       - deploy_kube_runsh_kubectl
 
+# State resource for storing CI outputs
+  - name: deploy_kube_runsh_state
+    type: state
+
 ################################
 # TEST environment
 
