@@ -36,8 +36,9 @@ build:
 
   on_success:
     - shipctl put_resource_state deploy_kube_runsh_state "IMAGE" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
-    # - STATE_PATH=$(shipctl get_resource_state deploy_kube_runsh_state) && cp kube-deploy.yaml $STATE_PATH
-    - shipctl copy_file_to_resource_state kube-deploy.yaml deploy_kube_runsh_state
+    - shipctl put_resource_state deploy_kube_runsh_state "versionName" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
+    # - shipctl copy_file_to_resource_state kube-deploy.yaml deploy_kube_runsh_state
+    - STATE_PATH=$(shipctl get_resource_state deploy_kube_runsh_state) && cp kube-deploy.yaml $STATE_PATH
   
 
 # Integrations are used to connect external resources to CI
