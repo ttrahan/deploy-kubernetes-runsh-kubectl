@@ -35,6 +35,7 @@ build:
     - docker push $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER
 
   on_success:
+    - shipctl put_resource_state deploy_kube_runsh_img "versionName" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
     - shipctl put_resource_state deploy_kube_runsh_state "IMAGE" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
     - shipctl put_resource_state deploy_kube_runsh_state "versionName" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
     # - shipctl copy_file_to_resource_state kube-deploy.yaml deploy_kube_runsh_state
