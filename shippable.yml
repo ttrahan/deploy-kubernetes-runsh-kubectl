@@ -36,6 +36,8 @@ build:
 
   on_success:
     - echo versionName=$BRANCH.$BUILD_NUMBER > /build/state/deploy_kubernetes_runcli_img.env
+    - shipctl put_resource_state deploy_kube_runsh_state "IMAGE" "$DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER"
+    # - shipctl copy_file_to_resource_state kube-deploy.yaml deploy_kube_runsh_state
   
 
 # Integrations are used to connect external resources to CI
