@@ -22,7 +22,6 @@ jobs:
         switch: off
       - IN: deploy_kube_runsh_cli_kubectl
       - IN: deploy_kube_runsh_trigger
-        switch: off
       - IN: deploy_kube_runsh_state
       - IN: deploy_kube_runsh_params_test
       - TASK:
