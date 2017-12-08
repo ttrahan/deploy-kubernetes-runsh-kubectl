@@ -37,6 +37,12 @@ resources:
   - name: deploy_kube_runsh_state
     type: state
 
+# Trigger resource for initiating deployment
+  - name: deploy_kube_runsh_trigger
+    type: trigger
+    version:
+      counter: master.1
+
 ################################
 # TEST environment
 
